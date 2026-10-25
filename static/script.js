@@ -52,7 +52,7 @@ function saveStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
-let accounts = readStorage("studyshelf_accounts", {});
+let accounts = readStorage("edupulse_accounts", {});
 let resources = [];
 let bookmarks = {};
 let currentUser = null;
@@ -313,7 +313,7 @@ function openPage(pageName) {
         bookmarks: "My Bookmarks"
     };
 
-    $("pageTitle").textContent = titles[pageName] || "StudyShelf";
+    $("pageTitle").textContent = titles[pageName] || "EduPulse";
 
     if (pageName === "courses") renderCourses();
     if (pageName === "resources") renderResourceFilters();
@@ -590,10 +590,10 @@ $("themeToggle").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("studyshelf_dark_mode", String(isDark));
+    localStorage.setItem("edupulse_dark_mode", String(isDark));
 });
 
-if (localStorage.getItem("studyshelf_dark_mode") === "true") {
+if (localStorage.getItem("edupulse_dark_mode") === "true") {
     document.body.classList.add("dark-mode");
 }
 
